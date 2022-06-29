@@ -1,5 +1,5 @@
 ### HTML, CSS, JS Practice - Up And Down Game
 
-<img width=600 src="https://raw.githubusercontent.com/dhdl618/MarcJacobsWeb/master/thumnail.png">
+<img width=600 src="https://github.com/dhdl618/UpAndDown/blob/master/thumnail.png">
 
-#### :ballot_box_with_check: <a href="https://marcjcobs-jun.netlify.app/">GitHub Page Link</a>
+#### :ballot_box_with_check: <a href="https://alcohol-game.netlify.app/">GitHub Page Link</a>
