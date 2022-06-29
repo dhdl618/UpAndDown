@@ -29,6 +29,7 @@ let resultArea = document.getElementById("result-area")     // 결과 창
 let chancesArea = document.getElementById("chance-area")    // 찬스 남은횟수
 let answerArea = document.getElementById("answer-area")     // 정답 확인 창
 let answerButton = document.getElementById("answer-button") // 정답 확인버튼
+let answerText = document.getElementById("result-area")
 
 // 남은 기회
 let chances = 5                // 초기화
@@ -41,6 +42,7 @@ playButton.addEventListener("click", play)   // 매개변수에 play() 형태 X
 
 function play() {
     let userValue = userInput.value
+    answerText.style.color = "red"
 
     // 1 ~ 100 사이 외에 수를 입력하는 경우
     if(userValue < 1 || userValue > 100) {
@@ -54,15 +56,18 @@ function play() {
     }
 
     if(userValue < computerNum) {
-        resultArea.textContent = "Up"
+        resultArea.textContent = "▲ Up ▲"
         chances--
         chancesArea.textContent = `남은 기회는 ${chances}번!!`  // 횟수 출력
     } else if(userValue > computerNum) {
-        resultArea.textContent = "Down"
+        resultArea.textContent = "▼ Down ▼"
         chances--
         chancesArea.textContent = `남은 기회는 ${chances}번!!`  // 횟수 출력
     } else {
-        resultArea.textContent = "Exact!!"
+        resultArea.textContent = "🎉 맞췄습니다! 🎉"
+        playButton.style.transition = "none"
+        playButton.style.filter = "none"
+        playButton.style.cursor = "default"
         playButton.disabled = true       // 맞추면 Go 버튼 비활성화
         chancesArea.textContent = `${6-chances}번 만에 맞췄습니다!!`
     }
@@ -71,10 +76,13 @@ function play() {
     history.push(userValue)
 
     if(chances < 1) {
-        chancesArea.textContent = "도전 실패!!"
+        chancesArea.textContent = "도전 실패!!💣"
         gameOver = true
     }
     if(gameOver) {
+        playButton.style.transition = "none"
+        playButton.style.filter = "none"
+        playButton.style.cursor = "default"
         playButton.disabled = true
     }
 }
@@ -93,32 +101,65 @@ resetButton.addEventListener("click", reset)
 function reset() {
     // 유저 인풋창을 비우기
     userInput.value = ""
-
     // 새로운 번호 만들기
     pickRandomNum()
-
     // 결과 멘트창 초기화
-    resultArea.textContent = "결과가 나옵니다!"
-
+    resultArea.textContent = "💣두구두구두구!!💣"
     // 찬스 초기화
     chances = 5
-
     // 찬스 횟수 출력 초기화
     chancesArea.textContent = `남은 횟수 ${chances}번!!`
-
     // Go 버튼 활성화
     playButton.disabled = false
-
     // gameOver 초기화
     gameOver = false
-
     // 정답란 가리기
-    answerArea.textContent = "[정답확인을 눌러보세요!]"
+    answerArea.textContent = "답이 궁금해!?"
+    // hideAnswer 값 true로 할당
+    hideAnswer = true
+    // 결과 멘트 색 초기화
+    answerText.style.color = "black"
+    // 정답 버튼 text 변경
+    answerButton.textContent = "정답 확인"
+    // 히스토리 값 지우기
+    history.splice(0, history.length)
+    // Go 버튼 css 초기화
+    playButton.style.transition = "all 0.7s"
+    playButton.style.filter = "brightness(1)"
+    playButton.style.cursor = "pointer"
 }
 
 // 정답확인
+let hideAnswer = true
 answerButton.addEventListener("click", appearAnswer)
 
 function appearAnswer() {
-    answerArea.textContent = computerNum
+    switch(hideAnswer) {
+        case false: 
+            answerArea.textContent = "다시 확인하기"
+            hideAnswer = true
+            answerButton.textContent = "정답 확인"
+            break
+        
+        case true:
+            answerArea.textContent = computerNum
+            hideAnswer = false
+            answerButton.textContent = "가리기"
+            break
+    }
 }
+
+// 글씨 색깔 바꾸기
+
+let fontColor = document.querySelector("h2")
+
+setInterval(function() {
+    if(fontColor.style.color == "rgb(235, 131, 131)") {
+        fontColor.style.color = "rgb(35, 128, 172)"
+    } else if(fontColor.style.color == "rgb(35, 128, 172)") {
+        fontColor.style.color = "rgb(172, 150, 51)"
+    } else {
+        fontColor.style.color = "rgb(235, 131, 131)"
+    }
+}, 300)
+

@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>술 게임</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>*숫자 맞추기 게임*</h1>
-    <div id="result-area">
-        결과가 나옵니다!
+    <div class="main-container">
+        <img src="./alcohol-img.jpg">
+        <h1>Alcohol Game</h1>
+        <h2>못 맞추면 원 샷 🍺</h2>
+        <div class="inner-container">
+            <div id="result-area" class="result-container">
+                💣두구두구두구!!💣
+            </div>
+            <div id="chance-area" class="chance-container">
+                남은 횟수 5번!!
+            </div>
+            <input id="user-input" type="number" class="input-container" placeholder="숫자 입력창" />
+            <button id="play-button" class="play-btn">Go!</button>
+            <button id="reset-button" class="reset-btn">Reset!</button>
+            <div id="answer-area" class="answer-container">
+                답이 궁금해!?
+            </div>
+            <button id="answer-button" class="answer-btn">정답 확인</button>
+        </div>
     </div>
-    <div id="chance-area">
-        남은 횟수 5번!
-    </div>
-    <input id="user-input" type="number" />
-    <button id="play-button">Go!</button>
-    <button id="reset-button">Reset!</button>
-    <div id="answer-area">
-        [정답확인을 눌러보세요!]
-    </div>
-    <button id="answer-button">정답확인!</button>
     <script src="main.js"></script>
 </body>
 </html>

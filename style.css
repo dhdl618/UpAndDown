@@ -1,0 +1,175 @@
+body {
+    font-family: 'Gugi', cursive;
+    background: url(./alcohol-bg-img.jpg);
+    align-items: center;
+}
+
+img {
+    width: 1000px;
+    height: 470px;
+}
+
+h1 {
+    font-size: 80px;
+    color: rgb(51, 139, 48);
+}
+
+h2 {
+    margin-top: -20px;
+    font-size: 60px;
+}
+
+.main-container {
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.904);
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.inner-container {
+    margin: auto;
+    width: 80%;
+    max-width: 1000px;
+    border: double 5px rgb(105, 105, 105);
+    border-radius: 15px;
+}
+
+.result-container {
+    margin: 5px 0px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.chance-container {
+    margin: 10px 0px 0px 0px;
+    color: rgb(126, 72, 177);
+    font-size: 20px;
+}
+
+.input-container {
+    margin: 10px 0px 20px 0px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    width: 160px;
+    height: 30px;
+    padding-left: 10px;
+    background-color: rgb(63, 63, 63);
+    margin-right: 10px;
+}
+
+.answer-container {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.678);
+    font-size: 11px;
+    font-family: 'Gugi', cursive;
+}
+
+.play-btn, .reset-btn {
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(56, 56, 56);
+    width: 55px;
+    height: 30px;
+    font-family: 'Gugi', cursive;
+    padding-top: 3px;
+    transition: all 0.7s;
+    cursor: pointer;
+}
+
+.reset-btn {
+    background-color: rgb(97, 34, 34);
+}
+
+.answer-btn {
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(62, 112, 74);
+    margin-bottom: 15px;
+    width: 70px;
+    height: 30px;
+    font-family: 'Gugi', cursive;
+    transition: all 0.5s;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+
+.play-btn:hover, .reset-btn:hover, .answer-btn:hover {
+    filter: brightness(0.7);
+}
+
+/* iPad pro 일때 */
+@media screen and (min-width: 768px) and (max-width: 1368px) {
+    
+    img {
+        width: 800px;
+        height: 430px;
+    }
+
+    h1 {
+        font-size: 70px;
+    }
+
+    .main-container {
+        margin-top: 60px;
+    }
+
+    /* .inner-container {
+        margin: auto 300px;
+        height: 210px
+    } */
+
+    .result-container {
+        margin: 10px 0px 20px 0px;
+        font-size: 35px;
+    }
+
+    .input-container {
+        width: 150px;
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    .answer-container {
+        margin-top: 10px;
+    }
+    
+}
+
+
+/* iPhone 12 pro 일때 */
+@media screen and (max-width:767px) {
+    
+    h1 {
+        font-size: 57px;
+    }
+
+    h2 {
+        font-size: 33px;
+    }
+    img {
+        width: 300px;
+        height: 230px;
+    }
+
+    /* .inner-container {
+        margin: auto 30px;
+        height: 200px;
+    }
+     */
+    .result-container {
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .chance-container{
+        font-size: 16px;
+    }
+}
+
