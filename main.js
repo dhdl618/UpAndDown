@@ -65,9 +65,6 @@ function play() {
         chancesArea.textContent = `남은 기회는 ${chances}번!!`  // 횟수 출력
     } else {
         resultArea.textContent = "🎉 맞췄습니다! 🎉"
-        playButton.style.transition = "none"
-        playButton.style.filter = "none"
-        playButton.style.cursor = "default"
         playButton.disabled = true       // 맞추면 Go 버튼 비활성화
         chancesArea.textContent = `${6-chances}번 만에 맞췄습니다!!`
     }
@@ -80,9 +77,6 @@ function play() {
         gameOver = true
     }
     if(gameOver) {
-        playButton.style.transition = "none"
-        playButton.style.filter = "none"
-        playButton.style.cursor = "default"
         playButton.disabled = true
     }
 }
@@ -123,10 +117,6 @@ function reset() {
     answerButton.textContent = "정답 확인"
     // 히스토리 값 지우기
     history.splice(0, history.length)
-    // Go 버튼 css 초기화
-    playButton.style.transition = "all 0.7s"
-    playButton.style.filter = "brightness(1)"
-    playButton.style.cursor = "pointer"
 }
 
 // 정답확인

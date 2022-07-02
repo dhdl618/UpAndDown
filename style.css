@@ -78,8 +78,13 @@ input::placeholder {
     height: 30px;
     font-family: 'Gugi', cursive;
     padding-top: 3px;
-    transition: all 0.7s;
+    transition: all 0.8s;
     cursor: pointer;
+}
+.play-btn:disabled {
+    transition: none;
+    filter: brightness(0.7);
+    cursor: default;
 }
 
 .reset-btn {
